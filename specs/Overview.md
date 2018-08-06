@@ -1,6 +1,6 @@
 # Overview
 
-Strongly typed minimalized OOP language
+Small strongly typed language
 
 ```ts
 module info {
@@ -36,3 +36,10 @@ module info {
 }
 ```
 
+생각해볼거
+근데 사실 이런거보다는 아무 언어에 대해 디버거를 만든다는게 내게 중요해서 일케 남겨두는거임
+
+- [ ] 상속
+- [ ] 제너릭
+- [ ] 데이터 은닉
+- [ ] 캐스팅
