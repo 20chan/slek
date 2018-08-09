@@ -43,3 +43,17 @@ module info {
 - [ ] 제너릭
 - [ ] 데이터 은닉
 - [ ] 캐스팅
+
+|순위|기호|설명|순서|
+|--|--|--|--|
+|1|! ~ -|단항|R2L|
+|2|* / %||L2R|
+|3|+ - ++||L2R|
+|4|<< >>|Bitwise shift|L2R|
+|5|< > <= >= == !=||L2R|
+|6|&|Bitwise AND|L2R|
+|7|^|Bitwise XOR|L2R|
+|8|\||Bitwise OR|L2R|
+|9|&&|Logical AND|L2R|
+|10|\|\||Logical OR|L2R|
+|11|=||R2L|

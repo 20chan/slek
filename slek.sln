@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "slek", "slek\slek.csproj", "{1F65C538-5C52-4927-B2B1-D76A61CC3458}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "slek", "slek\slek.csproj", "{1F65C538-5C52-4927-B2B1-D76A61CC3458}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slek.ParserGenerator", "Slek.ParserGenerator\Slek.ParserGenerator.csproj", "{97C186FD-FCAF-4999-ABFF-73EE81DABD6D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1F65C538-5C52-4927-B2B1-D76A61CC3458}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F65C538-5C52-4927-B2B1-D76A61CC3458}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F65C538-5C52-4927-B2B1-D76A61CC3458}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97C186FD-FCAF-4999-ABFF-73EE81DABD6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97C186FD-FCAF-4999-ABFF-73EE81DABD6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97C186FD-FCAF-4999-ABFF-73EE81DABD6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97C186FD-FCAF-4999-ABFF-73EE81DABD6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

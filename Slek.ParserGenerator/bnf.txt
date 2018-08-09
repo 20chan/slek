@@ -1,5 +1,4 @@
-```r
-program := stmt*
+﻿program := stmt*
 stmt := simple_stmt | compound_stmt
 
 simple_stmt := import_stmt | break_stmt | continue_stmt | return_stmt | expr
@@ -39,4 +38,3 @@ trailer = '[' expr ']' '(' expr* ')'
 suite := stmt | ('{' stmt* '}')
 type := ID
 module := ID
-```
