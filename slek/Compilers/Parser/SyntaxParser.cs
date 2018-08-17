@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Slek.ParserGenerator
+namespace slek.Compilers.Parser
 {
-    public class BNFParser
+    class SyntaxParser
     {
     }
 }

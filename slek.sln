@@ -5,7 +5,19 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "slek", "slek\slek.csproj", "{1F65C538-5C52-4927-B2B1-D76A61CC3458}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slek.ParserGenerator", "Slek.ParserGenerator\Slek.ParserGenerator.csproj", "{97C186FD-FCAF-4999-ABFF-73EE81DABD6D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "slek.Tests", "slek.Tests\slek.Tests.csproj", "{2816075D-78D0-4F80-B292-0A3AF45AD4FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "files", "files", "{41C83084-0F6E-4167-B181-6A1358263DB2}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "specs", "specs", "{A01C38F4-6F67-4D45-8932-5C43BDD7285D}"
+	ProjectSection(SolutionItems) = preProject
+		specs\bnf.md = specs\bnf.md
+		specs\Collections.md = specs\Collections.md
+		specs\Overview.md = specs\Overview.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,13 +29,16 @@ Global
 		{1F65C538-5C52-4927-B2B1-D76A61CC3458}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F65C538-5C52-4927-B2B1-D76A61CC3458}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F65C538-5C52-4927-B2B1-D76A61CC3458}.Release|Any CPU.Build.0 = Release|Any CPU
-		{97C186FD-FCAF-4999-ABFF-73EE81DABD6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{97C186FD-FCAF-4999-ABFF-73EE81DABD6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{97C186FD-FCAF-4999-ABFF-73EE81DABD6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{97C186FD-FCAF-4999-ABFF-73EE81DABD6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2816075D-78D0-4F80-B292-0A3AF45AD4FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2816075D-78D0-4F80-B292-0A3AF45AD4FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2816075D-78D0-4F80-B292-0A3AF45AD4FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2816075D-78D0-4F80-B292-0A3AF45AD4FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A01C38F4-6F67-4D45-8932-5C43BDD7285D} = {41C83084-0F6E-4167-B181-6A1358263DB2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A2201310-8BF8-4EFE-991D-114CFA8E055B}
