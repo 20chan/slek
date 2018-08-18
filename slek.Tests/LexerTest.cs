@@ -10,7 +10,7 @@ using slek.Compilers.Exceptions;
 namespace slek.Tests
 {
     [TestClass]
-    public class LexerTest_
+    public class LexerTest
     {
         [TestCategory("Lexer"), TestMethod]
         public void TestNumericLexing()
