@@ -6,6 +6,10 @@
         {
             protected readonly string _text;
             protected readonly T _value;
+
+            internal SyntaxTokenWithValue(SyntaxTokenType type, T value) : this(type, value.ToString(), value)
+            { }
+
             internal SyntaxTokenWithValue(SyntaxTokenType type, string text, T value) : base(type, text.Length)
             {
                 _text = text;

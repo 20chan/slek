@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace slek.Compilers.Syntax
+﻿namespace slek.Compilers.Syntax
 {
     public partial class SyntaxToken
     {
@@ -47,21 +43,28 @@ namespace slek.Compilers.Syntax
         internal static SyntaxToken Identifier(string name)
             => new SyntaxIdentifier(SyntaxTokenType.Identifier, name);
 
-        public static bool operator==(SyntaxToken source, SyntaxToken dest)
+        public override bool Equals(object obj)
         {
-            if (dest == null)
+            var tok = obj as SyntaxToken;
+            if (tok == null)
                 return false;
-            if (dest.TokenType != source.TokenType)
+            if (tok.TokenType != TokenType)
                 return false;
-            if (dest.Text != source.Text)
+            if (tok.Text != Text)
                 return false;
-            if (dest.Value.GetType() != source.GetType())
+            if (tok.Value.GetType() != Value.GetType())
                 return false;
-            if (!dest.Value.Equals(source))
+            if (!tok.Value.Equals(Value))
                 return false;
 
             return true;
         }
+
+        public override int GetHashCode()
+            => Text.GetHashCode();
+
+        public static bool operator ==(SyntaxToken source, SyntaxToken dest)
+            => source.Equals(dest);
 
         public static bool operator !=(SyntaxToken source, SyntaxToken dest)
             => !(source == dest);
