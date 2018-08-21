@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "specs", "specs", "{A01C38F4
 		specs\Overview.md = specs\Overview.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "slek.ParserGenerator", "slek.ParserGenerator\slek.ParserGenerator.csproj", "{68A7D035-8CE8-42AB-B81F-44BB8984199F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2816075D-78D0-4F80-B292-0A3AF45AD4FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2816075D-78D0-4F80-B292-0A3AF45AD4FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2816075D-78D0-4F80-B292-0A3AF45AD4FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68A7D035-8CE8-42AB-B81F-44BB8984199F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68A7D035-8CE8-42AB-B81F-44BB8984199F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68A7D035-8CE8-42AB-B81F-44BB8984199F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68A7D035-8CE8-42AB-B81F-44BB8984199F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
