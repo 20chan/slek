@@ -62,11 +62,5 @@
 
         public override int GetHashCode()
             => Text.GetHashCode();
-
-        public static bool operator ==(SyntaxToken source, SyntaxToken dest)
-            => source.Equals(dest);
-
-        public static bool operator !=(SyntaxToken source, SyntaxToken dest)
-            => !(source == dest);
     }
 }
