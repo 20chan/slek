@@ -9,12 +9,13 @@ namespace slek.ParserGenerator
     {
         static void Main(string[] args)
         {
-            var bnf = File.ReadAllText("bnf.txt");
-            var lexed = Lex(bnf);
-            foreach (var l in lexed) Console.WriteLine(l);
+            var bnfs = File.ReadAllLines("bnf.txt").Where(s => s.Length > 0);
+            var lexed = bnfs.Select(b => Lex(b)).ToArray();
+            var parsed = Parse(lexed);
+
             Console.Read();
         }
-        
+
         static string[] Lex(string bnf)
         {
             int idx = 0;
@@ -60,6 +61,65 @@ namespace slek.ParserGenerator
                     idx++;
                 idx++;
                 return bnf.Substring(start, idx - start);
+            }
+        }
+
+        static Node[] Parse(string[][] bnfs)
+        {
+            return bnfs.Select(s => ParseOne(s)).ToArray();
+            Node ParseOne(string[] bnf)
+            {
+                int i = 2; 
+                var name = bnf[0];
+                return new Define(name, ParseSeq(bnf, ref i));
+            }
+            Node ParseSeq(string[] bnf, ref int i)
+            {
+                var nodes = new List<Node>();
+                while (i < bnf.Length && bnf[i] != ")")
+                {
+                    nodes.Add(ParseOr(bnf, ref i));
+                }
+                return new Sequence(nodes.ToArray());
+            }
+            Node ParseOr(string[] bnf, ref int i)
+            {
+                var l = ParseMaybe(bnf, ref i);
+                if (i == bnf.Length) return l;
+                if (bnf[i] == "|")
+                {
+                    i++;
+                    return new Or(l, ParseOr(bnf, ref i));
+                }
+                else return l;
+            }
+            Node ParseMaybe(string[] bnf, ref int i)
+            {
+                var l = ParseAtom(bnf, ref i);
+                if (i == bnf.Length) return l;
+                if (bnf[i] == "?")
+                {
+                    i++;
+                    return new Maybe(l);
+                }
+                else if (bnf[i] == "*")
+                {
+                    i++;
+                    return new Repeat(l);
+                }
+                else return l;
+            }
+            Node ParseAtom(string[] bnf, ref int i)
+            {
+                if (bnf[i] == "(")
+                {
+                    i++;
+                    var node = ParseSeq(bnf, ref i);
+                    if (bnf[i++] != ")")
+                        throw new Exception();
+                    return node;
+                }
+                return new Value(bnf[i++]);
             }
         }
     }
