@@ -2,10 +2,10 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using slek.Compilers.Parser;
 using slek.Compilers.Syntax;
+using slek.Compilers.Exceptions;
 
 using static slek.Compilers.Syntax.SyntaxTokenType;
 using static slek.Compilers.Syntax.SyntaxFactory;
-using slek.Compilers.Exceptions;
 
 namespace slek.Tests
 {

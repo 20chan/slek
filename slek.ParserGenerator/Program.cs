@@ -122,5 +122,10 @@ namespace slek.ParserGenerator
                 return new Value(bnf[i++]);
             }
         }
+
+        static GeneratedClass[] Generate(Node[] nodes)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
