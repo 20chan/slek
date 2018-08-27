@@ -14,12 +14,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "files", "files", "{41C83084
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "specs", "specs", "{A01C38F4-6F67-4D45-8932-5C43BDD7285D}"
 	ProjectSection(SolutionItems) = preProject
-		specs\bnf.md = specs\bnf.md
 		specs\Collections.md = specs\Collections.md
 		specs\Overview.md = specs\Overview.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "slek.ParserGenerator", "slek.ParserGenerator\slek.ParserGenerator.csproj", "{68A7D035-8CE8-42AB-B81F-44BB8984199F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "slek.ParserGenerator", "slek.ParserGenerator\slek.ParserGenerator.csproj", "{68A7D035-8CE8-42AB-B81F-44BB8984199F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

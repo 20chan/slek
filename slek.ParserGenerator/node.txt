@@ -1,0 +1,27 @@
+﻿Node { }
+Program Node { StmtNode[] Nodes }
+StmtNode Node { }
+ParamsNode Node { ValueInfoNode[] Parameters }
+ValueInfoNode Node { string Name string Type }
+SuiteNode Node { StmtNode[] Statements }
+ImportStmtNode StmtNode { SyntaxToken Name }
+BreakStmtNode StmtNode { }
+ContinueStmtNode StmtNode { }
+ReturnStmtNode StmtNode { ExprNode Expr }
+ModuleDefStmtNode StmtNode { string Name Program Body }
+StructDefStmtNode StmtNode { string Name Node[] Members }
+CtorDefStmtNode StmtNode { ParamsNode Parameters SuiteNode Body }
+FuncDefStmtNode StmtNode { string Name ParamsNode Parameters string Type SuiteNode Body }
+VarDefStmtNode StmtNode { string Name string Type ExprNode Value }
+IfStmtNode StmtNode { ExprNode Condition SuiteNode Body IfStmtNode ElseIf SuiteNode Else }
+WhileStmtNode StmtNode { ExprNode Condition SuiteNode Body }
+ForStmtNode StmtNode { bool IsNewVarDef string Value string Type ExprNode Source SuiteNode Body }
+ExprNode StmtNode { }
+BinaryExprNode ExprNode { SyntaxToken Operator ExprNode Left ExprNode Right }
+UnaryExprNode ExprNode { SyntaxToken Operator ExprNode Expression }
+AtomExprNode ExprNode { ExprNode Atom TrailerExprNode[] Trailers }
+TrailerExprNode ExprNode { }
+IndexerExprNode TrailerExprNode { ExprNode Parameter }
+CallExprNode TrailerExprNode { ExprNode[] Parameters }
+ArrayExprNode ExprNode { ExprNode[] Values }
+NewArrayExprNode ExprNode { string Type ExprNode Length }

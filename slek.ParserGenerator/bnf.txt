@@ -35,6 +35,7 @@ array := '[' (expr (expr ',')*)? ']'
 newarr := type '[' expr ']'
 trailer := '[' expr ']' | '(' expr* ')'
 
+parameters := (ID ':' type (',' ID ':' type)*)?
 suite := stmt | ('{' stmt* '}')
 type := ID
 module := ID
