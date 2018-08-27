@@ -62,9 +62,13 @@ namespace slek.ParserGenerator
         {
             sb.Append($"{indent2}public {Name}(");
 
-            for (int i = 0; i < Fields.Length - 1; i++)
-                sb.Append($"{Fields[i].Type} {Fields[i].Name}, ");
-            sb.AppendLine($"{Fields.Last().Type} {Fields.Last().Name})");
+            if (Fields.Length > 0)
+            {
+                for (int i = 0; i < Fields.Length - 1; i++)
+                    sb.Append($"{Fields[i].Type} {Fields[i].Name}, ");
+                sb.Append($"{Fields.Last().Type} {Fields.Last().Name}");
+            }
+            sb.AppendLine(")");
             sb.Append(indent2);
             sb.AppendLine("{");
 

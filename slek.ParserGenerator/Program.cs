@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
+
+using Field = slek.ParserGenerator.GeneratedClass.ClassField;
+using static slek.ParserGenerator.GeneratedClass.Modifier;
 
 namespace slek.ParserGenerator
 {
@@ -9,10 +13,11 @@ namespace slek.ParserGenerator
     {
         static void Main(string[] args)
         {
-            var bnfs = File.ReadAllLines("bnf.txt").Where(s => s.Length > 0);
-            var lexed = bnfs.Select(b => Lex(b)).ToArray();
-            var parsed = Parse(lexed);
-
+            var nodes = File.ReadAllLines("node.txt").Select(s => s.Split()).ToArray();
+            var generated = Generate(nodes);
+            File.WriteAllLines("out.txt", generated.Select(s => s.ToString()), Encoding.UTF8);
+            foreach (var g in generated)
+                Console.Write(g);
             Console.Read();
         }
 
@@ -123,9 +128,22 @@ namespace slek.ParserGenerator
             }
         }
 
-        static GeneratedClass[] Generate(Node[] nodes)
+        static GeneratedClass[] Generate(string[][] nodes)
         {
-            throw new NotImplementedException();
+            var result = new List<GeneratedClass>();
+            foreach (var n in nodes)
+            {
+                string name = n[0], inhSource = n[1];
+                bool isInherited = true;
+                if (n[1] == "{")
+                    isInherited = false;
+                var parameters = new List<Field>();
+                for (int i = 3; i < n.Length - 1; i += 2)
+                    parameters.Add(new Field(@public, n[i], n[i + 1]));
+
+                result.Add(new GeneratedClass(4, @public, name, isInherited, inhSource, parameters.ToArray()));
+            }
+            return result.ToArray();
         }
     }
 }
