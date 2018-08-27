@@ -15,7 +15,7 @@ struct_field_dec := ID ':' type
 constructor := 'new' '(' parameters ')' suite
 func_def := 'fn' ID '(' parameters ')' ':' type suite
 var_def := 'var' ID ':' type ('=' expr)?
-if_stmt := 'if' '(' expr ')' suite
+if_stmt := 'if' '(' expr ')' suite ('else' 'if' '(' expr ')' suite)* ('else' suite)?
 while_stmt := 'while' '(' expr ')' suite
 for_stmt := 'for' '(' for_iter ')' suite
 for_iter := ('var' ID ':' : type 'in' expr) | (ID 'in' expr)
@@ -31,10 +31,10 @@ arith_expr := term (('+' | '-') arith_expr)?
 term := factor (('*' | '/' | '%') term)?
 factor := ('+' | '-' | '~') factor | atom_expr
 atom_expr := atom trailer*
-atom = ('(' expr ')') | array | newarr | ID | NUMBER | STRING | TRUE | FALSE
-array = '[' (expr (expr ',')*)? ']'
-newarr = type '[' expr ']'
-trailer = '[' expr ']' '(' expr* ')'
+atom := ('(' expr ')') | array | newarr | ID | NUMBER | STRING | TRUE | FALSE
+array := '[' (expr (expr ',')*)? ']'
+newarr := type '[' expr ']'
+trailer := '[' expr ']' | '(' expr* ')'
 
 suite := stmt | ('{' stmt* '}')
 type := ID
